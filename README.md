@@ -10,4 +10,4 @@ The Entity Relationship diagram for Tourism Analysis-Data Mart is as below.
 [SQLFile for DDL statements](./DataFolder/Final_DDL_TourismNS.sql)
 
 
-[SQL File for DML statements](.DataFolder/Final_DML_TourismNS.sql)
+[SQL File for DML statements](./DataFolder/Final_DML_TourismNS.sql)

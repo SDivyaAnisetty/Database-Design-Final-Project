@@ -24,7 +24,7 @@ MS SQL Server 2022 and the below DDL and DML commands (checked ones) are used to
     - [ ] DELETE
 
 
-Follow the instructions and explanations on the '[TourismAnalysis-NovaScotia_DDL_DML_Instructions.ipynb](./TourismAnalysis-NovaScotia_DDL_DML_Instructions.ipynb)' file
+Follow the instructions and explanations on the '[TourismAnalysis-NovaScotia_DDL_DML_Instructions.ipynb](./DataFolder/TourismAnalysis-NovaScotia_DDL_DML_Instructions.ipynb)' file
 
 
 Access here for SQL File on [DDL](./DataFolder/Final_DDL_TourismNS.sql) statements

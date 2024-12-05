@@ -7,18 +7,21 @@ GO
 /*************************************************************************************************
 Step-2 Creating Schemas
 *************************************************************************************************/
+
 --Creating a schema called 'stg'
 IF NOT EXISTS (SELECT * FROM sys.schemas WHERE name = 'stg')
 BEGIN
     EXEC sp_executesql N'CREATE SCHEMA stg;';
 END
 GO
+
 --Creating a schema called 'dim'
 IF NOT EXISTS (SELECT * FROM sys.schemas WHERE name = 'dim')
 BEGIN
     EXEC sp_executesql N'CREATE SCHEMA dim;';
 END
 GO
+
 --Creating a schema called 'fact'
 IF NOT EXISTS (SELECT * FROM sys.schemas WHERE name = 'fact')
 BEGIN
@@ -47,12 +50,14 @@ CREATE TABLE dim.Country (
 );
 GO
 
---Add Constraints
+/*********Add primary key constraint**********/
+
 ALTER TABLE dim.Country
 ADD CONSTRAINT PK_CountryOriginID PRIMARY KEY (pkCountryOriginID);
 GO
 
 /******************************dim.ModeOfEntry**************************************/
+
 -- Drop foreign key constraints referencing dim.ModeOfEntry
 IF EXISTS (SELECT * FROM sys.foreign_keys WHERE name = 'FK_ModeOfEntryID')
 BEGIN
@@ -69,16 +74,20 @@ CREATE TABLE dim.ModeOfEntry (
 );
 GO
 
---Add Constraints
+/*********Add primary key constraint**********/
+
 ALTER TABLE dim.ModeOfEntry
 ADD CONSTRAINT PK_ModeOfEntryID PRIMARY KEY (pkModeOfEntryID);
 GO
+
+/*********Add unique key constraint**********/
 
 ALTER TABLE dim.ModeOfEntry
 ADD CONSTRAINT UK_ModeOfEntry UNIQUE (ukModeOfEntry);
 GO
 
 /******************************dim.Seasons**************************************/
+
 -- Drop foreign key constraints referencing dim.Seasons
 IF EXISTS (SELECT * FROM sys.foreign_keys WHERE name = 'FK_SeasonID')
 BEGIN
@@ -96,16 +105,20 @@ CREATE TABLE dim.Seasons (
 );
 GO
 
---Add Constraints
+/*********Add primary key constraint**********/
+
 ALTER TABLE dim.Seasons
 ADD CONSTRAINT PK_SeasonsID PRIMARY KEY (pkSeasonsID);
 GO
+
+/*********Add unique key constraint**********/
 
 ALTER TABLE dim.Seasons
 ADD CONSTRAINT UK_Seasons UNIQUE (ukSeasons);
 GO
 
 /******************************dim.OperatorType**************************************/
+
 -- Drop foreign key constraints referencing dim.OperatorType
 IF EXISTS (SELECT * FROM sys.foreign_keys WHERE name = 'FK_OperatorTypeID')
 BEGIN
@@ -122,12 +135,14 @@ CREATE TABLE dim.OperatorType (
 );
 GO
 
---Add Constraints
+/*********Add primary key constraint**********/
+
 ALTER TABLE dim.OperatorType
 ADD CONSTRAINT PK_OperatorTypeID PRIMARY KEY (pkOperatorTypeID);
 GO
 
 /******************************dim.Provinces**************************************/
+
 -- Drop foreign key constraints referencing dim.OperatorType
 IF EXISTS (SELECT * FROM sys.foreign_keys WHERE name = 'FK_VisitorOrigin')
 BEGIN
@@ -145,12 +160,14 @@ CREATE TABLE dim.Provinces (
 );
 GO
 
---Add Constraints
+/*********Add primary key constraint**********/
+
 ALTER TABLE dim.Provinces
 ADD CONSTRAINT PK_VisitorOrigin PRIMARY KEY (pkVisitorOrigin);
 GO
 
 /******************************dim.Calendar**************************************/
+
 -- Drop foreign key constraints referencing dim.Calendar
 IF EXISTS (SELECT * FROM sys.foreign_keys WHERE name = 'FK_TourismDate')
 BEGIN
@@ -173,7 +190,8 @@ CREATE TABLE dim.Calendar (
 );
 GO
 
---Add Constraints
+/*********Add primary key constraint**********/
+
 ALTER TABLE dim.Calendar
 ADD CONSTRAINT PK_DateValue PRIMARY KEY (pkDateValue);
 GO
@@ -200,7 +218,9 @@ CREATE TABLE fact.Region (
 );
 GO
 
---Add Constraints
+/*********Add foreign key constraints**********/
+
+--fkOperatorTypeID from fact.Region ----> pkOperatorTypeID from dim.OperatorType
 ALTER TABLE fact.Region
 ADD CONSTRAINT FK_OperatorTypeID 
 	FOREIGN KEY (fkOperatorTypeID)
@@ -224,31 +244,37 @@ CREATE TABLE fact.Tourism (
 );
 GO
 
---Add Constraints
+/*********Add foreign key constraints**********/
+
+--fkTourismDate from fact.Tourism ----> pkDateValue from dim.Calendar
 ALTER TABLE fact.Tourism
 ADD CONSTRAINT FK_TourismDate
 	FOREIGN KEY (fkTourismDate)
 	REFERENCES dim.Calendar(pkDateValue);
 GO
 
+--fkModeOfEntryID from fact.Tourism ----> pkModeOfEntryID from dim.Calendar
 ALTER TABLE fact.Tourism
 ADD CONSTRAINT FK_ModeOfEntryID
 	FOREIGN KEY (fkModeOfEntryID)
 	REFERENCES dim.ModeOfEntry(pkModeOfEntryID);
 GO
 
+--fkSeasonsID from fact.Tourism ----> pkSeasonsID from dim.Calendar
 ALTER TABLE fact.Tourism
 ADD CONSTRAINT FK_SeasonID
 	FOREIGN KEY (fkSeasonsID)
 	REFERENCES dim.Seasons(pkSeasonsID);
 GO
 
+--fkCountryOriginID from fact.Tourism ----> pkCountryOriginID from dim.Calendar
 ALTER TABLE fact.Tourism
 ADD CONSTRAINT FK_CountryOriginID
 	FOREIGN KEY (fkCountryOriginID)
 	REFERENCES dim.Country(pkCountryOriginID);
 GO
 
+--fkVisitorOrigin from fact.Tourism ----> pkVisitorOrigin from dim.Calendar
 ALTER TABLE fact.Tourism
 ADD CONSTRAINT FK_VisitorOrigin
 	FOREIGN KEY (fkVisitorOrigin)

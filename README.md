@@ -10,7 +10,7 @@ The mart is created based on the [Star Schema Design](https://www.kimballgroup.c
 
 
 # **Steps to Tourism-Nova Scotia Data Mart Creation**
-From the below DDL and DML commands, checked ones are used to achieve this mart.
+MS SQL Server 2022 and the below DDL and DML commands (checked ones) are used to achieve this mart.
 - DDL-Data Definition Language deals with defining and managing the structure of data.
 
     - [x] CREATE

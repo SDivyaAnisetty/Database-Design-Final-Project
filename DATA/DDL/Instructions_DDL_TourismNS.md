@@ -68,7 +68,7 @@ ALTER TABLE dim.Country
 ADD CONSTRAINT PK_CountryOriginID PRIMARY KEY (pkCountryOriginID);
 GO
 ```
-### 🔹 ModeOfEntry - Dimension table 
+### ModeOfEntry - Dimension table 
 [Back to Overview](#overview-of-tourism-nova-scotia-data-mart)
 ```
 /******************************dim.ModeOfEntry**************************************/
@@ -101,7 +101,7 @@ ALTER TABLE dim.ModeOfEntry
 ADD CONSTRAINT UK_ModeOfEntry UNIQUE (ukModeOfEntry);
 GO
 ```
-### 🔹 Seasons - Dimension table
+### Seasons - Dimension table
 [Back to Overview](#overview-of-tourism-nova-scotia-data-mart)
 ```
 /******************************dim.Seasons**************************************/
@@ -135,7 +135,7 @@ ALTER TABLE dim.Seasons
 ADD CONSTRAINT UK_Seasons UNIQUE (ukSeasons);
 GO
 ```
-### 🔹 OperatorType - Dimension table
+### OperatorType - Dimension table
 [Back to Overview](#overview-of-tourism-nova-scotia-data-mart)
 ```
 /******************************dim.OperatorType**************************************/
@@ -162,7 +162,7 @@ ALTER TABLE dim.OperatorType
 ADD CONSTRAINT PK_OperatorTypeID PRIMARY KEY (pkOperatorTypeID);
 GO
 ```
-### 🔹 Provinces - Dimension table
+### Provinces - Dimension table
 [Back to Overview](#overview-of-tourism-nova-scotia-data-mart)
 ```
 /******************************dim.Provinces**************************************/
@@ -190,7 +190,7 @@ ALTER TABLE dim.Provinces
 ADD CONSTRAINT PK_VisitorOrigin PRIMARY KEY (pkVisitorOrigin);
 GO
 ```
-### 🔹 Calendar - Dimension table
+### Calendar - Dimension table
 [Back to Overview](#overview-of-tourism-nova-scotia-data-mart)
 ```
 /******************************dim.Calendar**************************************/
@@ -224,7 +224,7 @@ ADD CONSTRAINT PK_DateValue PRIMARY KEY (pkDateValue);
 GO
 ```
 ## Step 4️⃣ - Creating fact tables
-### 🔹 Region - Fact table
+### Region - Fact table
 [Back to Overview](#overview-of-tourism-nova-scotia-data-mart)
 ```
 /******************************fact.Region**************************************/
@@ -254,7 +254,7 @@ ADD CONSTRAINT FK_OperatorTypeID
     REFERENCES dim.OperatorType (pkOperatorTypeID);
 GO
 ```
-### 🔹 Tourism - Fact table
+### Tourism - Fact table
 [Back to Overview](#overview-of-tourism-nova-scotia-data-mart)
 ```
 /******************************fact.Tourism**************************************/

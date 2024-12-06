@@ -43,8 +43,7 @@ GO
 
 ## Step 3️⃣ - Creating dim tables
 ### Country - Dimension table  
-[Back to Overview of "Tourism-Nova Scotia" Data Mart](#overview-of-tourism-nova-scotia-data-mart)
-[TOP](#overview-of-"tourism-nova-scotia"-data-mart)
+[Back to Overview](#overview-of-tourism-nova-scotia-data-mart)
 ```
 /******************************dim.Country**************************************/
 -- Drop foreign key constraints referencing dim.Country
@@ -69,7 +68,8 @@ ALTER TABLE dim.Country
 ADD CONSTRAINT PK_CountryOriginID PRIMARY KEY (pkCountryOriginID);
 GO
 ```
-### ModeOfEntry - Dimension table
+### ModeOfEntry - Dimension table [Back to Overview](#overview-of-tourism-nova-scotia-data-mart)
+[Back to Overview](#overview-of-tourism-nova-scotia-data-mart)
 ```
 /******************************dim.ModeOfEntry**************************************/
 

@@ -4,7 +4,7 @@
 -    [Step 3 - Creating dim tables](#step-3️⃣---creating-dim-tables)
 -    [Step 4 - Creating fact tables](#step-4️⃣---creating-fact-tables)
 
-## Overview of "Tourism-Nova Scotia" Data Mart
+## Overview of the Data Mart
    -   dim
        -    [Country](#country---dimension-table)
         -   [ModeOfEntry](#modeofentry---dimension-table)
@@ -48,7 +48,7 @@ GO
 
 ## Step 3️⃣ - Creating dim tables
 ### Country - Dimension table  
-[Back to Overview](#overview-of-tourism-nova-scotia-data-mart)
+[Back to Overview](#overview-of-the-data-mart)
 ```
 /******************************dim.Country**************************************/
 -- Drop foreign key constraints referencing dim.Country
@@ -74,7 +74,7 @@ ADD CONSTRAINT PK_CountryOriginID PRIMARY KEY (pkCountryOriginID);
 GO
 ```
 ### ModeOfEntry - Dimension table 
-[Back to Overview](#overview-of-tourism-nova-scotia-data-mart)
+[Back to Overview](#overview-of-the-data-mart)
 ```
 /******************************dim.ModeOfEntry**************************************/
 
@@ -107,7 +107,7 @@ ADD CONSTRAINT UK_ModeOfEntry UNIQUE (ukModeOfEntry);
 GO
 ```
 ### Seasons - Dimension table
-[Back to Overview](#overview-of-tourism-nova-scotia-data-mart)
+[Back to Overview](#overview-of-the-data-mart)
 ```
 /******************************dim.Seasons**************************************/
 
@@ -141,7 +141,7 @@ ADD CONSTRAINT UK_Seasons UNIQUE (ukSeasons);
 GO
 ```
 ### OperatorType - Dimension table
-[Back to Overview](#overview-of-tourism-nova-scotia-data-mart)
+[Back to Overview](#overview-of-the-data-mart)
 ```
 /******************************dim.OperatorType**************************************/
 
@@ -168,7 +168,7 @@ ADD CONSTRAINT PK_OperatorTypeID PRIMARY KEY (pkOperatorTypeID);
 GO
 ```
 ### Provinces - Dimension table
-[Back to Overview](#overview-of-tourism-nova-scotia-data-mart)
+[Back to Overview](#overview-of-the-data-mart)
 ```
 /******************************dim.Provinces**************************************/
 
@@ -196,7 +196,7 @@ ADD CONSTRAINT PK_VisitorOrigin PRIMARY KEY (pkVisitorOrigin);
 GO
 ```
 ### Calendar - Dimension table
-[Back to Overview](#overview-of-tourism-nova-scotia-data-mart)
+[Back to Overview](#overview-of-the-data-mart)
 ```
 /******************************dim.Calendar**************************************/
 
@@ -230,7 +230,7 @@ GO
 ```
 ## Step 4️⃣ - Creating fact tables
 ### Region - Fact table
-[Back to Overview](#overview-of-tourism-nova-scotia-data-mart)
+[Back to Overview](#overview-of-the-data-mart)
 ```
 /******************************fact.Region**************************************/
 
@@ -260,7 +260,7 @@ ADD CONSTRAINT FK_OperatorTypeID
 GO
 ```
 ### Tourism - Fact table
-[Back to Overview](#overview-of-tourism-nova-scotia-data-mart)
+[Back to Overview](#overview-of-the-data-mart)
 ```
 /******************************fact.Tourism**************************************/
 

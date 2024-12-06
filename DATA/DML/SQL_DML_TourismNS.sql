@@ -6,7 +6,15 @@ Step-1 Loading Data into Dimension tables
 *************************************************************************************************/
 
 /******************************Loading into dim.Country**************************************/
+
+--Delete the existing records from the table
+IF OBJECT_ID('dim.Country') IS NOT NULL
+BEGIN
+    DELETE FROM dim.Country;
+END
 GO
+
+--Load the records into the table
 INSERT INTO dim.Country(pkCountryOriginID, CountryOrigin)
 	SELECT stgCountry.CountryOriginID
 			,stgCountry.CountryOrigin
@@ -17,7 +25,14 @@ GO
 
 /******************************Loading into dim.ModeOfEntry**************************************/
 
+--Delete the existing records from the table
+IF OBJECT_ID('dim.ModeOfEntry') IS NOT NULL
+BEGIN
+    DELETE FROM dim.ModeOfEntry;
+END
 GO
+
+--Load the records into the table
 INSERT INTO dim.ModeOfEntry(pkModeOfEntryID, ukModeOfEntry)
 	SELECT stgModeOfEntry.ModeOfEntryID
 			,stgModeOfEntry.ModeOfEntry
@@ -27,7 +42,15 @@ INSERT INTO dim.ModeOfEntry(pkModeOfEntryID, ukModeOfEntry)
 GO
 
 /******************************Loading into dim.Seasons**************************************/
+
+--Delete the existing records from the table
+IF OBJECT_ID('dim.Seasons') IS NOT NULL
+BEGIN
+    DELETE FROM dim.Seasons;
+END
 GO
+
+--Load the records into the table
 INSERT INTO dim.Seasons(pkSeasonsID, ukSeasons, SeasonsOrder)
 	SELECT stgSeasons.SeasonsID
 			,stgSeasons.Seasons
@@ -38,7 +61,15 @@ INSERT INTO dim.Seasons(pkSeasonsID, ukSeasons, SeasonsOrder)
 GO
 
 /******************************Loading into dim.OperatorType**************************************/
+
+--Delete the existing records from the table
+IF OBJECT_ID('dim.OperatorType') IS NOT NULL
+BEGIN
+    DELETE FROM dim.OperatorType;
+END
 GO
+
+--Load the records into the table
 INSERT INTO dim.OperatorType(pkOperatorTypeID, OperatorType)
 	SELECT stgOperatorType.OperatorTypeID
 			,stgOperatorType.OperatorType
@@ -47,7 +78,15 @@ INSERT INTO dim.OperatorType(pkOperatorTypeID, OperatorType)
 GO
 
 /******************************Loading into dim.Provinces**************************************/
+
+--Delete the existing records from the table
+IF OBJECT_ID('dim.Provinces') IS NOT NULL
+BEGIN
+    DELETE FROM dim.Provinces;
+END
 GO
+
+--Load the records into the table
 INSERT INTO dim.Provinces(pkVisitorOrigin, OriginCountry,Province)
 	SELECT stgProvinces.VisitorOrigin
 			,stgProvinces.OriginCountry
@@ -57,7 +96,15 @@ INSERT INTO dim.Provinces(pkVisitorOrigin, OriginCountry,Province)
 GO
 
 /******************************Loading into dim.Calendar**************************************/
+
+--Delete the existing records from the table
+IF OBJECT_ID('dim.Calendar') IS NOT NULL
+BEGIN
+    DELETE FROM dim.Calendar;
+END
 GO
+
+--Load the records into the table
 INSERT INTO dim.Calendar(pkDateValue, [Year], [Month], [Day], [MonthName], [Quarter], [DayName], [Weekday])
 	SELECT stgCalendar.[Date]
       ,stgCalendar.[Year]
@@ -76,7 +123,15 @@ Step-2 Loading Data into Fact tables
 *************************************************************************************************/
 
 /******************************Loading into fact.Region**************************************/
+
+--Delete the existing records from the table
+IF OBJECT_ID('fact.Region') IS NOT NULL
+BEGIN
+    DELETE FROM fact.Region;
+END
 GO
+
+--Load the records into the table
 INSERT INTO fact.Region(TouristAttractionID, TouristAttraction, [Name], fkOperatorTypeID, OperatorType
 							, Longitude, Latitude, [Location], [Counter])
 	SELECT stgRegion.TouristAttractionID
@@ -93,7 +148,15 @@ INSERT INTO fact.Region(TouristAttractionID, TouristAttraction, [Name], fkOperat
 GO
 
 /******************************Loading into fact.Tourism**************************************/
+
+--Delete the existing records from the table
+IF OBJECT_ID('fact.Tourism') IS NOT NULL
+BEGIN
+    DELETE FROM fact.Tourism;
+END
 GO
+
+--Load the records into the table
 INSERT INTO fact.Tourism (fkTourismDate, [MonthName], fkModeOfEntryID, fkSeasonsID, 
 							fkCountryOriginID, fkVisitorOrigin, VisitorCount, CountryOrigin)
 	SELECT [Month/Year]

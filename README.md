@@ -26,12 +26,12 @@ MS SQL Server 2022 and the below DDL and DML commands (checked ones) are used to
 # 🗃️ DATA
 
 ## 📂 DDL
-[Explanations-Instructions](./DATA/DDL/Instructions_DDL_TourismNS.ipynb)
+[Explanations-Instructions](./DATA/DDL/Instructions_DDL_TourismNS.md)
 
 [SQL Statements](./DATA/DDL/SQL_DDL_TourismNS.sql)
 
 ## 📂 DML
-[Explanations-Instructions](./DATA/DML/Instructions_DML_TourismNS.ipynb)
+[Explanations-Instructions](./DATA/DML/Instructions_DML_TourismNS.md)
 
 [SQL Statements](./DATA/DML/SQL_DML_TourismNS.sql)
 

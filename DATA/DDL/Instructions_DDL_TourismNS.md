@@ -6,7 +6,8 @@
 
 ## Overview of "Tourism-Nova Scotia" Data Mart
    -   dim
-        -   [Country](#-🔹-country---dimension-table)
+       -    [Country](#🔹-country---dimension-table)
+
         -   [ModeOfEntry](#modeofentry---dimension-table)
         -   [Seasons](#seasons---dimension-table)
         -   [OperatorType](#operatortype---dimension-table)

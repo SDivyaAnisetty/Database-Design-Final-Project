@@ -27,12 +27,12 @@ MS SQL Server 2022 and the below DDL and DML commands (checked ones) are used to
 Follow the instructions and explanations on the '[TourismAnalysis-NovaScotia_DDL_DML_Instructions.ipynb](./DataFolder/TourismAnalysis-NovaScotia_DDL_DML_Instructions.ipynb)' file
 
 ## DDL
-[SQL Statements](./Data/DDL/Final_DDL_TourismNS.sql)
+[SQL Statements](./DATA/DDL/Final_DDL_TourismNS.sql)
 
 [Explanations-Instructions](./DATA/DDL/TourismAnalysis-NovaScotia_DDL_Instructions.ipynb)
 
 ## DML
-[SQL Statements](./Data/DML/Final_DML_TourismNS.sql)
+[SQL Statements](./DATA/DML/Final_DML_TourismNS.sql)
 
 [Explanations-Instructions](./DATA/DML/TourismAnalysis-NovaScotia_DML_Instructions.ipynb)
 

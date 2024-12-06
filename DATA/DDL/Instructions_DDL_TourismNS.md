@@ -217,5 +217,89 @@ ALTER TABLE dim.Calendar
 ADD CONSTRAINT PK_DateValue PRIMARY KEY (pkDateValue);
 GO
 ```
+## Step 4️⃣ - Creating fact tables
+### Region - Fact table
+```
+/******************************fact.Region**************************************/
 
+-- Drop and recreate the fact.Region table
+DROP TABLE IF EXISTS fact.Region;
 
+CREATE TABLE fact.Region (
+    TouristAttractionID NVARCHAR(50) NOT NULL
+    ,TouristAttraction NVARCHAR(100) NOT NULL
+    ,[Name] NVARCHAR(100) NOT NULL
+    ,fkOperatorTypeID INT NOT NULL
+    ,OperatorType NVARCHAR(100) NOT NULL
+    ,Longitude FLOAT NULL
+    ,Latitude FLOAT NULL
+    ,[Location] NVARCHAR(200) NOT NULL
+    ,[Counter] INT NOT NULL
+);
+GO
+
+/*********Add foreign key constraints**********/
+
+--fkOperatorTypeID from fact.Region ----> pkOperatorTypeID from dim.OperatorType
+ALTER TABLE fact.Region
+ADD CONSTRAINT FK_OperatorTypeID 
+    FOREIGN KEY (fkOperatorTypeID)
+    REFERENCES dim.OperatorType (pkOperatorTypeID);
+GO
+```
+### Tourism - Fact table
+```
+/******************************fact.Tourism**************************************/
+
+-- Drop and recreate the fact.Tourism table
+DROP TABLE IF EXISTS fact.Tourism;
+
+CREATE TABLE fact.Tourism (
+    fkTourismDate DATETIME NOT NULL
+    ,[MonthName] NVARCHAR(50) NOT NULL
+    ,fkModeOfEntryID NVARCHAR(10) NOT NULL
+    ,fkSeasonsID INT NOT NULL
+    ,fkCountryOriginID INT NOT NULL
+    ,fkVisitorOrigin NVARCHAR(100) NOT NULL
+    ,VisitorCount INT NULL
+    ,CountryOrigin NVARCHAR(50) NULL
+);
+GO
+
+/*********Add foreign key constraints**********/
+
+--fkTourismDate from fact.Tourism ----> pkDateValue from dim.Calendar
+ALTER TABLE fact.Tourism
+ADD CONSTRAINT FK_TourismDate
+    FOREIGN KEY (fkTourismDate)
+    REFERENCES dim.Calendar(pkDateValue);
+GO
+
+--fkModeOfEntryID from fact.Tourism ----> pkModeOfEntryID from dim.Calendar
+ALTER TABLE fact.Tourism
+ADD CONSTRAINT FK_ModeOfEntryID
+    FOREIGN KEY (fkModeOfEntryID)
+    REFERENCES dim.ModeOfEntry(pkModeOfEntryID);
+GO
+
+--fkSeasonsID from fact.Tourism ----> pkSeasonsID from dim.Calendar
+ALTER TABLE fact.Tourism
+ADD CONSTRAINT FK_SeasonID
+    FOREIGN KEY (fkSeasonsID)
+    REFERENCES dim.Seasons(pkSeasonsID);
+GO
+
+--fkCountryOriginID from fact.Tourism ----> pkCountryOriginID from dim.Calendar
+ALTER TABLE fact.Tourism
+ADD CONSTRAINT FK_CountryOriginID
+    FOREIGN KEY (fkCountryOriginID)
+    REFERENCES dim.Country(pkCountryOriginID);
+GO
+
+--fkVisitorOrigin from fact.Tourism ----> pkVisitorOrigin from dim.Calendar
+ALTER TABLE fact.Tourism
+ADD CONSTRAINT FK_VisitorOrigin
+    FOREIGN KEY (fkVisitorOrigin)
+    REFERENCES dim.Provinces(pkVisitorOrigin);
+GO
+```

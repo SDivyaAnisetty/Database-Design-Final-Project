@@ -23,20 +23,21 @@ MS SQL Server 2022 and the below DDL and DML commands (checked ones) are used to
     - [ ] UPDATE
     - [x] DELETE
 
+# 🗃️ DATA
 
-## ✔️ DDL
-[SQL Statements](./DATA/DDL/Final_DDL_TourismNS.sql)
+## 📂 DDL
+[SQL Statements](./DATA/DDL/SQL_DDL_TourismNS.sql)
 
-[Explanations-Instructions](./DATA/DDL/TourismAnalysis-NovaScotia_DDL_Instructions.ipynb)
+[Explanations-Instructions](./DATA/DDL/Instructions_DDL_TourismNS.ipynb)
 
-## ✔️ DML
-[SQL Statements](./DATA/DML/Final_DML_TourismNS.sql)
+## 📂 DML
+[SQL Statements](./DATA/DML/SQL_DML_TourismNS.sql)
 
-[Explanations-Instructions](./DATA/DML/TourismAnalysis-NovaScotia_DML_Instructions.ipynb)
+[Explanations-Instructions](./DATA/DML/Instructions_DML_TourismNS.ipynb)
 
 
-## ✔️ ERD
-The Entity Relationship diagram for *Tourism-Nova Scotia* Data mart is as below.
+## 📂 ERD
+The Entity Relationship diagram for *Tourism-Nova Scotia* Data mart is as below. Access [here]() for other formats 
 
 ![ERD](./DATA/ERD/Tourism_NovaScotia.png)
 

@@ -42,7 +42,7 @@ GO
 ```
 
 ## Step 3️⃣ - Creating dim tables
-### 🔹 Country - Dimension table  
+### Country - Dimension table  
 [Back to Overview](#overview-of-tourism-nova-scotia-data-mart)
 ```
 /******************************dim.Country**************************************/

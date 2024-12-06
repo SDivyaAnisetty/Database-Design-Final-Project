@@ -1,4 +1,7 @@
 # Steps to create "Tourism-Nova Scotia" Data Mart
+
+   - [Step 4](#step-4️⃣---creating-fact-tables)
+
 ## Overview of "Tourism-Nova Scotia" Data Mart
    -   dim
         -   [Country](#country---dimension-table)

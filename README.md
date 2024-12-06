@@ -1,4 +1,4 @@
-# 🌅 *Tourism-Nova Scotia* Data Mart Analysis ✈️
+# 🌅 *Tourism-Nova Scotia* Data Mart Overview ✈️
 A step-by-step process of designing, creating and loading of a Data Mart based on Tourism Analysis-Nova Scotia
 Nova Scotia is a popular getaway known for its scenic beauty and calm pace of life. Being surrounded by water all around, it hosts vast greenery and picturesque locations starting from a world's famous Cabot Trails, local wineries, cozy cottages etc.
 

@@ -42,7 +42,8 @@ GO
 ```
 
 ## Step 3️⃣ - Creating dim tables
-### Country - Dimension table
+### Country - Dimension table 
+[TOP](#overview-of-"tourism-nova-scotia"-data-mart)
 ```
 /******************************dim.Country**************************************/
 -- Drop foreign key constraints referencing dim.Country

@@ -1,8 +1,8 @@
 # Steps to create "Tourism-Nova Scotia" Data Mart
 ## Overview of "Tourism-Nova Scotia" Data Mart
    -   dim
-        -   Country
-        -   ModeOfEntry
+        -   [Country](#Country - Dimension table)
+        -   [ModeOfEntry](#modeofentry---dimension-table)
         -   Seasons
         -   OperatorType
         -   Provinces

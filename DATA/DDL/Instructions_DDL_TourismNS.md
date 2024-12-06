@@ -1,8 +1,8 @@
 # Steps to create "Tourism-Nova Scotia" Data Mart
-   - [Step 1 - Creating a Database](#step-1️⃣---creating-a-database)
-   - [Step 2 - Creating Schemas](#step-2️⃣---creating-schemas)
-   - [Step 3 - Creating dim tables](#step-3️⃣---creating-dim-tables)
-   - [Step 4 - Creating fact tables](#step-4️⃣---creating-fact-tables)
+    [Step 1 - Creating a Database](#step-1️⃣---creating-a-database)
+    [Step 2 - Creating Schemas](#step-2️⃣---creating-schemas)
+    [Step 3 - Creating dim tables](#step-3️⃣---creating-dim-tables)
+    [Step 4 - Creating fact tables](#step-4️⃣---creating-fact-tables)
 
 ## Overview of "Tourism-Nova Scotia" Data Mart
    -   dim

@@ -1,15 +1,15 @@
 # Steps to create "Tourism-Nova Scotia" Data Mart
 ## Overview of "Tourism-Nova Scotia" Data Mart
    -   dim
-        -   [Country](#Country - Dimension table)
+        -   [Country](#country---dimension-table)
         -   [ModeOfEntry](#modeofentry---dimension-table)
-        -   Seasons
-        -   OperatorType
-        -   Provinces
-        -   Calendar
+        -   [Seasons](#seasons---dimension-table)
+        -   [OperatorType](#operatortype---dimension-table)
+        -   [Provinces](#provinces---dimension-table)
+        -   [Calendar](#calendar---dimension-table)
   -   fact
-        -   Region
-        -   Tourism
+        -   [Region](#region---fact-table)
+        -   [Tourism](#tourism---fact-table)
 
 ## Step 1️⃣ - Creating a Database
 IN SQL Server Management Studio, create a new database called 'Tourism_NovaScotia' and execute the below code to switch the database context.

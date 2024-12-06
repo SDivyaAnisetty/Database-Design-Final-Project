@@ -26,15 +26,14 @@ MS SQL Server 2022 and the below DDL and DML commands (checked ones) are used to
 # 🗃️ DATA
 
 ## 📂 DDL
-[SQL Statements](./DATA/DDL/SQL_DDL_TourismNS.sql)
-
 [Explanations-Instructions](./DATA/DDL/Instructions_DDL_TourismNS.ipynb)
 
-## 📂 DML
-[SQL Statements](./DATA/DML/SQL_DML_TourismNS.sql)
+[SQL Statements](./DATA/DDL/SQL_DDL_TourismNS.sql)
 
+## 📂 DML
 [Explanations-Instructions](./DATA/DML/Instructions_DML_TourismNS.ipynb)
 
+[SQL Statements](./DATA/DML/SQL_DML_TourismNS.sql)
 
 ## 📂 ERD
 The Entity Relationship diagram for *Tourism-Nova Scotia* Data mart is as below. Access [here]() for other formats 

@@ -9,7 +9,7 @@ This Data mart contains the Tourist data starting from 2006 to 2024. The source 
 The mart is created based on the [Star Schema Design](https://www.kimballgroup.com/data-warehouse-business-intelligence-resources/kimball-techniques/dimensional-modeling-techniques/star-schema-olap-cube/) as outlined by [Ralph Kimball](https://www.kimballgroup.com/data-warehouse-business-intelligence-resources/kimball-techniques/dimensional-modeling-techniques/)
 
 
-# ✔️ **Steps to Tourism-Nova Scotia Data Mart Creation**
+# ✔️ **Steps to create Tourism-Nova Scotia Data Mart **
 MS SQL Server 2022 and the below DDL and DML commands (checked ones) are used to achieve this mart.
 - DDL-Data Definition Language deals with defining and managing the structure of data.
 

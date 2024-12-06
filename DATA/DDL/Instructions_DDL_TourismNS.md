@@ -99,4 +99,123 @@ ALTER TABLE dim.ModeOfEntry
 ADD CONSTRAINT UK_ModeOfEntry UNIQUE (ukModeOfEntry);
 GO
 ```
+### Seasons - Dimension table
+```
+/******************************dim.Seasons**************************************/
+
+-- Drop foreign key constraints referencing dim.Seasons
+IF EXISTS (SELECT * FROM sys.foreign_keys WHERE name = 'FK_SeasonID')
+BEGIN
+    ALTER TABLE fact.Tourism 
+    DROP CONSTRAINT FK_SeasonID;
+END
+
+-- Drop and recreate the dim.Seasons table
+DROP TABLE IF EXISTS dim.Seasons;
+
+CREATE TABLE dim.Seasons (
+    pkSeasonsID INT NOT NULL --IDENTITY(11, 1)
+    ,ukSeasons NVARCHAR(100) NOT NULL
+    ,SeasonsOrder INT NOT NULL
+);
+GO
+
+/*********Add primary key constraint**********/
+
+ALTER TABLE dim.Seasons
+ADD CONSTRAINT PK_SeasonsID PRIMARY KEY (pkSeasonsID);
+GO
+
+/*********Add unique key constraint**********/
+
+ALTER TABLE dim.Seasons
+ADD CONSTRAINT UK_Seasons UNIQUE (ukSeasons);
+GO
+```
+### OperatorType - Dimension table
+```
+/******************************dim.OperatorType**************************************/
+
+-- Drop foreign key constraints referencing dim.OperatorType
+IF EXISTS (SELECT * FROM sys.foreign_keys WHERE name = 'FK_OperatorTypeID')
+BEGIN
+    ALTER TABLE fact.Region 
+    DROP CONSTRAINT FK_OperatorTypeID;
+END
+
+-- Drop and recreate the dim.OperatorType table
+DROP TABLE IF EXISTS dim.OperatorType;
+
+CREATE TABLE dim.OperatorType (
+    pkOperatorTypeID INT NOT NULL
+    ,OperatorType NVARCHAR(100) NOT NULL
+);
+GO
+
+/*********Add primary key constraint**********/
+
+ALTER TABLE dim.OperatorType
+ADD CONSTRAINT PK_OperatorTypeID PRIMARY KEY (pkOperatorTypeID);
+GO
+```
+### Provinces - Dimension table
+```
+/******************************dim.Provinces**************************************/
+
+-- Drop foreign key constraints referencing dim.OperatorType
+IF EXISTS (SELECT * FROM sys.foreign_keys WHERE name = 'FK_VisitorOrigin')
+BEGIN
+    ALTER TABLE fact.Tourism 
+    DROP CONSTRAINT FK_VisitorOrigin;
+END
+
+-- Drop and recreate the dim.Provinces table
+DROP TABLE IF EXISTS dim.Provinces;
+
+CREATE TABLE dim.Provinces (
+    pkVisitorOrigin NVARCHAR(100) NOT NULL
+    ,OriginCountry NVARCHAR(100) NOT NULL
+    ,Province NVARCHAR(100) NOT NULL
+);
+GO
+
+/*********Add primary key constraint**********/
+
+ALTER TABLE dim.Provinces
+ADD CONSTRAINT PK_VisitorOrigin PRIMARY KEY (pkVisitorOrigin);
+GO
+```
+### Calendar - Dimension table
+```
+/******************************dim.Calendar**************************************/
+
+-- Drop foreign key constraints referencing dim.Calendar
+IF EXISTS (SELECT * FROM sys.foreign_keys WHERE name = 'FK_TourismDate')
+BEGIN
+    ALTER TABLE fact.Tourism 
+    DROP CONSTRAINT FK_TourismDate;
+END
+
+-- Drop and recreate the dim.Calendar table
+DROP TABLE IF EXISTS dim.Calendar;
+
+CREATE TABLE dim.Calendar (
+    pkDateValue DATETIME NOT NULL
+    ,[Year] NVARCHAR(20) NOT NULL
+    ,[Month] INT NOT NULL
+    ,[Day] INT NOT NULL
+    ,[MonthName] NVARCHAR(20) NOT NULL
+    ,[Quarter] NVARCHAR(3) NOT NULL
+    ,[DayName] NVARCHAR(20) NOT NULL
+    ,Weekday NVARCHAR(10) NOT NULL
+);
+GO
+
+/*********Add primary key constraint**********/
+
+ALTER TABLE dim.Calendar
+ADD CONSTRAINT PK_DateValue PRIMARY KEY (pkDateValue);
+GO
+```
+
 

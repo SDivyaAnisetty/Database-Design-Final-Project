@@ -1,6 +1,6 @@
 #  *Tourism-Nova Scotia* Data Mart Analysis
-A step-by-step process of design, creation and loading of a Data Mart based on Tourism Analysis-Nova Scotia
-Nova Scotia is a popular getaway known for it's scenic beauty and calm pace of life. Being surrounded by water all around, it hosts vast greenery and picturesque locations starting from a world famous Cabot Trails, local wineries, cozy cottages etc.
+A step-by-step process of designing, creating and loading of a Data Mart based on Tourism Analysis-Nova Scotia
+Nova Scotia is a popular getaway known for its scenic beauty and calm pace of life. Being surrounded by water all around, it hosts vast greenery and picturesque locations starting from a world's famous Cabot Trails, local wineries, cozy cottages etc.
 
 
 This Data mart contains the Tourist data starting from 2006 to 2024. The source for this data is [Tourism Nova Scotia Visitation](https://data.novascotia.ca/Business-and-Industry/Tourism-Nova-Scotia-Visitation/n783-4gmh/data_preview) page from [Nova Scotia Government's Open Data Portal](https://data.novascotia.ca/)
@@ -17,25 +17,29 @@ MS SQL Server 2022 and the below DDL and DML commands (checked ones) are used to
     - [x] ALTER
     - [x] DROP
 
-- DML - Data Manipulation Language deals with modifying and manipulation of data.
+- DML - Data Manipulation Language deals with modifying and manipulating data.
 
     - [x] INSERT
     - [ ] UPDATE
-    - [ ] DELETE
+    - [x] DELETE
 
 
 Follow the instructions and explanations on the '[TourismAnalysis-NovaScotia_DDL_DML_Instructions.ipynb](./DataFolder/TourismAnalysis-NovaScotia_DDL_DML_Instructions.ipynb)' file
 
+## DDL
+[SQL Statements](./Data/DDL/Final_DDL_TourismNS.sql)
 
-Access here for SQL File on [DDL](./DataFolder/Final_DDL_TourismNS.sql) statements
+[Explanations-Instructions](./DATA/DDL/TourismAnalysis-NovaScotia_DDL_Instructions.ipynb)
 
+## DML
+[SQL Statements](./Data/DML/Final_DML_TourismNS.sql)
 
-Access here for SQL File on [DML](./DataFolder/Final_DML_TourismNS.sql) statements
+[Explanations-Instructions](./DATA/DML/TourismAnalysis-NovaScotia_DML_Instructions.ipynb)
 
 
 ## ERD
 The Entity Relationship diagram for *Tourism-Nova Scotia* Data mart is as below.
 
-![ERD](./DataFolder/Tourism_NovaScotia.png)
+![ERD](./DATA/ERD/Tourism_NovaScotia.png)
 
 

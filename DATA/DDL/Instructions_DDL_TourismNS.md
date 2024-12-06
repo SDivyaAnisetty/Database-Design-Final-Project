@@ -6,7 +6,7 @@
 
 ## Overview of "Tourism-Nova Scotia" Data Mart
    -   dim
-        -   [Country](#country---dimension-table)
+        -   [Country](#-🔹-country---dimension-table)
         -   [ModeOfEntry](#modeofentry---dimension-table)
         -   [Seasons](#seasons---dimension-table)
         -   [OperatorType](#operatortype---dimension-table)
@@ -47,7 +47,7 @@ GO
 ```
 
 ## Step 3️⃣ - Creating dim tables
-### Country - Dimension table  
+### 🔹 Country - Dimension table  
 [Back to Overview](#overview-of-tourism-nova-scotia-data-mart)
 ```
 /******************************dim.Country**************************************/

@@ -36,7 +36,7 @@ MS SQL Server 2022 and the below DDL and DML commands (checked ones) are used to
 [SQL Statements](./DATA/DML/SQL_DML_TourismNS.sql)
 
 ## 📂 ERD
-The Entity Relationship diagram for *Tourism-Nova Scotia* Data mart is as below. Access [here]() for other formats 
+The Entity Relationship diagram for *Tourism-Nova Scotia* Data mart is as below. Access [here](./DATA/ERD) for other formats 
 
 ![ERD](./DATA/ERD/Tourism_NovaScotia.png)
 
